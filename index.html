@@ -1,431 +1,523 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>IMS | Limetray</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.5 -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="css/main.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="css/theme.css">
-  <!-- iCheck -->
-  <style type="text/css">
-  .user-panel-left{
-    padding: 0px;
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>IMS | Limetray</title>
+      <!-- Tell the browser to be responsive to screen width -->
+      <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+      <!-- Bootstrap 3.3.5 -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+      <!-- Ionicons -->
+      <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+      <!-- Theme style -->
+      <link rel="stylesheet" href="css/main.css">
+      <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+      <link rel="stylesheet" href="css/theme.css">
+      <!-- iCheck -->
+      <style type="text/css">
+         .user-panel-left{
+         padding: 0px;
+         }
+         .user-panel-right{
+         padding: 0px;
+         }
+         .main-sidebar-left{
+         left: 8px;
+         }
+         .main-sidebar-right{
+         right: 0px;
+         }
+         .main-sidebar{
+         width: 200px;
+         }
+         .nopadding {
+         padding: 0 !important;
+         margin: 0 !important;
+         }
+         .nopadding-left {
+         padding-left: 0 !important;
+         margin-left: 0 !important;
+         }
+         .nopadding-right {
+         padding-right: 0 !important;
+         margin-right: 0 !important;
+         float: right;
+         }
+         .main-header {
+         position: relative;
+         max-height: 100px;
+         z-index: 1030;
+         border-bottom-color: blue;
+         border-bottom: 2px solid green !important;
+         }
+         .bordr-bottom.active{
+         border-bottom: 2px solid green !important;
+         }
+         .bordr-bottom:hover{
+         border-bottom: 2px solid green !important;
+         }
+         li:hover{
+         background-color: white;
+         }
+         li.active{
+         background-color: white;
+         }
 
-  }
-  .user-panel-right{
-    padding: 0px;
-
-  }
-  .main-sidebar-left{
-    left: 8px;
-  }
-  .main-sidebar-right{
-    right: 0px;
-  }
-  .main-sidebar{
-    width: 200px;
-  }
-  .nopadding {
-   padding: 0 !important;
-   margin: 0 !important;
-}
-.nopadding-left {
-   padding-left: 0 !important;
-   margin-left: 0 !important;
-}
-.nopadding-right {
-   padding-right: 0 !important;
-   margin-right: 0 !important;
-   float: right;
-}
-
-.main-header {
-    position: relative;
-    max-height: 100px;
-    z-index: 1030;
-    border-bottom-color: blue;
-    border-bottom: 2px solid green !important;
-}
-.bordr-bottom.active{
-  border-bottom: 2px solid green !important;
-}
-.bordr-bottom:hover{
-  border-bottom: 2px solid green !important;
-}
-li:hover{
-  background-color: white;
-}
-li.active{
-  background-color: white;
-}
-  
-  </style>
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-</head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-
-  <header class="main-header">
-    <!-- Logo -->
-    
-    <p href="index2.html" class="logo bordr-bottom active">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <!-- logo for regular state and mobile devices -->
-      Inventory Dashboard
-    </p>
-    <p href="index2.html" class="logo bordr-bottom">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <!-- logo for regular state and mobile devices -->
-      Recipe Management
-    </p>
-    <p href="index2.html" class="logo bordr-bottom">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <!-- logo for regular state and mobile devices -->
-      Reporting
-    </p>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top" role="navigation">
-      <!-- Sidebar toggle button-->
-      <a href="#"  role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-user"></i>
-              <span class="hidden-xs">Subway</span>
+         /*css for modals starts from here*/
+         .modal-dialog{
+          width: 800px;
+         }
+      </style>
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body class="hold-transition skin-blue sidebar-mini">
+      <div class="wrapper">
+      <header class="main-header">
+         <!-- Logo -->
+         <p href="index2.html" class="logo bordr-bottom active">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <!-- logo for regular state and mobile devices -->
+            Inventory Dashboard
+         </p>
+         <p href="index2.html" class="logo bordr-bottom">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <!-- logo for regular state and mobile devices -->
+            Recipe Management
+         </p>
+         <p href="index2.html" class="logo bordr-bottom">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <!-- logo for regular state and mobile devices -->
+            Reporting
+         </p>
+         <!-- Header Navbar: style can be found in header.less -->
+         <nav class="navbar navbar-static-top" role="navigation">
+            <!-- Sidebar toggle button-->
+            <a href="#"  role="button">
+            <span class="sr-only">Toggle navigation</span>
             </a>
-            <ul class="dropdown-menu">
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <div class="row">
-    <div class="col-md-2 nopadding-left">
-       <aside class="main-sidebar main-sidebar-left" style="height:2000px;">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar" style="height:2000px;">
-      <!-- Sidebar user panel -->
-      <div class="user-panel user-panel-left" style="height:2000px;">
-     
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" style="background-color:#e7e7e7;min-height:2000px;" >
-        <li class="header">Categories</li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>All</span> </i>
-          </a>
-        </li>
-        <li class="treeview active">
-          <a href="#">
-            <i class="treeview" style="color:black;"></i> <span>Processed Materials</span> <i class="fa fa-angle-right pull-right" ></i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Veggies and fruits</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Herbs and spices</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Dashboard</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Dashboard</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Cooking oils</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Veggies and fruits</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Herbs and spices</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Dashboard</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Dashboard</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> <span>Cooking oils</span> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i> </i>
-          </a>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i style="color:black;"></i></i>
-          </a>
-        </li>
-
-
-        
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-    </div>
-    <div class="col-md-8 nopadding">
-      <div class="row">
-        <div class="col-md-2">
-          <h4>Search In:</h4>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <button type="button" class="btn bg-green margin">Normal</button>
-                <button type="button" class="btn bg-yellow margin">Low</button>
-                <button type="button" class="btn bg-red margin">Out Of Stock</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-9">
-          <div class="input-group margin">
-                <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                      <button type="button" class="btn btn-info btn-bg btn-flat"><i class="fa fa-fw fa-search"></i> Go!</button>
-                    </span>
-              </div>
-        </div>
-      </div>
-
-      
-
-
-
-      <div class="row">
-        <div class="col-md-6">
-        <div class="input-group margin">
-          <btn class="btn btn-primary selectAll" ><i class="fa fa-fw fa-arrows-alt"></i>Select ALL</btn>&nbsp;
-          <btn class="btn btn-primary unSelectAll"><i class="fa fa-fw fa-arrows-alt"></i>Unselect ALL</btn>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-10">
-        <div class="box-body no-padding">
-              <table class="table table-striped">
-                <tr>
-                  <th style="width: 10px"></th>
-                  <th>Material</th>
-                  <th>Stock</th>
-                  <th>Usable</th>
-                  <th>Unlimited</th>
-                  <th>Trigger value</th>
-                </tr>
-                <tr>
-                  <td>
-                    <label>
-                      <input type="checkbox" class="selectItem">
-                    </label>
-                  </td>
-                  <td>Update software</td>
-                  
-                  <td><span class="badge bg-yellow">50kg</span></td>
-                  <td><span class="badge bg-green">50kg</span></td>
-                  <td><i class="fa fa-fw fa-check-square-o"></i></td>
-                  <td><span class="badge bg-blue">23kg</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <label>
-                      <input type="checkbox" class="selectItem">
-                    </label>
-                  </td>
-                  <td>Update software</td>
-                  
-                  <td><span class="badge bg-yellow">50kg</span></td>
-                  <td><span class="badge bg-green">50kg</span></td>
-                  <td><i class="fa fa-fw fa-check-square-o"></i></td>
-                  <td><span class="badge bg-blue">23kg</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <label>
-                      <input type="checkbox" class="selectItem">
-                    </label>
-                  </td>
-                  <td>Update software</td>
-                  
-                  <td><span class="badge bg-yellow">50kg</span></td>
-                  <td><span class="badge bg-green">50kg</span></td>
-                  <td><i class="fa fa-fw fa-check-square-o"></i></td>
-                  <td><span class="badge bg-blue">23kg</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <label>
-                      <input type="checkbox" class="selectItem">
-                    </label>
-                  </td>
-                  <td>Update software</td>
-                  
-                  <td><span class="badge bg-yellow">50kg</span></td>
-                  <td><span class="badge bg-green">50kg</span></td>
-                  <td><i class="fa fa-fw fa-check-square-o"></i></td>
-                  <td><span class="badge bg-blue">23kg</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <label>
-                      <input type="checkbox" class="selectItem">
-                    </label>
-                  </td>
-                  <td>Update software</td>
-                  <td><span class="badge bg-yellow">50kg</span></td>
-                  <td><span class="badge bg-green">50kg</span></td>
-                  <td><i class="fa fa-fw fa-check-square-o"></i></td>
-                  <td><span class="badge bg-blue">23kg</span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <label>
-                      <input type="checkbox" class="selectItem">
-                    </label>
-                  </td>
-                  <td>Update software</td>
-                  <td><span class="badge bg-yellow">50kg</span></td>
-                  <td><span class="badge bg-green">50kg</span></td>
-                  <td><i class="fa fa-fw fa-check-square-o"></i></td>
-                  <td><span class="badge bg-blue">23kg</span></td>
-                </tr>
-                
-              </table>
+            <div class="navbar-custom-menu">
+               <ul class="nav navbar-nav">
+                  <!-- Messages: style can be found in dropdown.less-->
+                  <!-- User Account: style can be found in dropdown.less -->
+                  <li class="dropdown user user-menu">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                     <i class="fa fa-user"></i>
+                     <span class="hidden-xs">Subway</span>
+                     </a>
+                     <ul class="dropdown-menu">
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                           <div class="pull-left">
+                              <a href="#" class="btn btn-default btn-flat">Profile</a>
+                           </div>
+                           <div class="pull-right">
+                              <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                           </div>
+                        </li>
+                     </ul>
+                  </li>
+                  <!-- Control Sidebar Toggle Button -->
+               </ul>
             </div>
-        </div>
+         </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <div class="row">
+      <div class="col-md-2 nopadding-left">
+         <aside class="main-sidebar main-sidebar-left" style="height:2000px;">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar" style="height:2000px;">
+               <!-- Sidebar user panel -->
+               <div class="user-panel user-panel-left" style="height:2000px;">
+                  <!-- /.search form -->
+                  <!-- sidebar menu: : style can be found in sidebar.less -->
+                  <ul class="sidebar-menu" style="background-color:#e7e7e7;min-height:2000px;" >
+                     <li class="header">Categories</li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>All</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview active">
+                        <a href="#">
+                        <i class="treeview" style="color:black;"></i> <span>Processed Materials</span> <i class="fa fa-angle-right pull-right" ></i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Veggies and fruits</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Herbs and spices</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Dashboard</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Dashboard</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Cooking oils</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Veggies and fruits</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Herbs and spices</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Dashboard</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Dashboard</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> <span>Cooking oils</span> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i> </i>
+                        </a>
+                     </li>
+                     <li class="treeview">
+                        <a href="#">
+                        <i style="color:black;"></i></i>
+                        </a>
+                     </li>
+                  </ul>
+            </section>
+            <!-- /.sidebar -->
+         </aside>
+         </div>
+         <div class="col-md-8 nopadding">
+            <div class="row">
+               <div class="col-md-2">
+                  <h4>Search In:</h4>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <button type="button" class="btn bg-green margin">Normal</button>
+                  <button type="button" class="btn bg-yellow margin">Low</button>
+                  <button type="button" class="btn bg-red margin">Out Of Stock</button>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-9">
+                  <div class="input-group margin">
+                     <input type="text" class="form-control">
+                     <span class="input-group-btn">
+                     <button type="button" class="btn btn-info btn-bg btn-flat"><i class="fa fa-fw fa-search"></i> Go!</button>
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="input-group margin">
+                     <btn class="btn btn-primary selectAll" ><i class="fa fa-fw fa-arrows-alt"></i>Select ALL</btn>
+                     &nbsp;
+                     <btn class="btn btn-primary unSelectAll"><i class="fa fa-fw fa-arrows-alt"></i>Unselect ALL</btn>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-10">
+                  <div class="box-body no-padding">
+                     <table class="table table-striped">
+                        <tr>
+                           <th style="width: 10px"></th>
+                           <th>Material</th>
+                           <th>Stock</th>
+                           <th>Usable</th>
+                           <th>Unlimited</th>
+                           <th>Trigger value</th>
+                        </tr>
+                        <tr>
+                           <td>
+                              <label>
+                              <input type="checkbox" class="selectItem">
+                              </label>
+                           </td>
+                           <td>Update software</td>
+                           <td><span class="badge bg-yellow">50kg</span></td>
+                           <td><span class="badge bg-green">50kg</span></td>
+                           <td><i class="fa fa-fw fa-check-square-o"></i></td>
+                           <td><span class="badge bg-blue">23kg</span></td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <label>
+                              <input type="checkbox" class="selectItem">
+                              </label>
+                           </td>
+                           <td>Update software</td>
+                           <td><span class="badge bg-yellow">50kg</span></td>
+                           <td><span class="badge bg-green">50kg</span></td>
+                           <td><i class="fa fa-fw fa-check-square-o"></i></td>
+                           <td><span class="badge bg-blue">23kg</span></td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <label>
+                              <input type="checkbox" class="selectItem">
+                              </label>
+                           </td>
+                           <td>Update software</td>
+                           <td><span class="badge bg-yellow">50kg</span></td>
+                           <td><span class="badge bg-green">50kg</span></td>
+                           <td><i class="fa fa-fw fa-check-square-o"></i></td>
+                           <td><span class="badge bg-blue">23kg</span></td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <label>
+                              <input type="checkbox" class="selectItem">
+                              </label>
+                           </td>
+                           <td>Update software</td>
+                           <td><span class="badge bg-yellow">50kg</span></td>
+                           <td><span class="badge bg-green">50kg</span></td>
+                           <td><i class="fa fa-fw fa-check-square-o"></i></td>
+                           <td><span class="badge bg-blue">23kg</span></td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <label>
+                              <input type="checkbox" class="selectItem">
+                              </label>
+                           </td>
+                           <td>Update software</td>
+                           <td><span class="badge bg-yellow">50kg</span></td>
+                           <td><span class="badge bg-green">50kg</span></td>
+                           <td><i class="fa fa-fw fa-check-square-o"></i></td>
+                           <td><span class="badge bg-blue">23kg</span></td>
+                        </tr>
+                        <tr>
+                           <td>
+                              <label>
+                              <input type="checkbox" class="selectItem">
+                              </label>
+                           </td>
+                           <td>Update software</td>
+                           <td><span class="badge bg-yellow">50kg</span></td>
+                           <td><span class="badge bg-green">50kg</span></td>
+                           <td><i class="fa fa-fw fa-check-square-o"></i></td>
+                           <td><span class="badge bg-blue">23kg</span></td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-2 nopadding-right" >
+            <aside class="main-sidebar main-sidebar-right" style="height:1500px;">
+               <!-- sidebar: style can be found in sidebar.less -->
+               <section class="sidebar" style="height:1500px;">
+                  <!-- Sidebar user panel -->
+                  <div class="user-panel user-panel-right">
+                     <!-- /.search form -->
+                     <!-- sidebar menu: : style can be found in sidebar.less -->
+                     <ul class="sidebar-menu" style="background-color:#e7e7e7;height:1500px">
+                        <li class="header">
+                           <h4 data-toggle="modal" data-target="#purchaseOrderModal"><b>Raise Purchase Order</b></h4>
+                        </li>
+                        <li class="header">
+                           <h4><b>Close Order</b></h4>
+                        </li>
+                        <li class="header">
+                           <h4 data-toggle="modal" data-target="#reconcilationModal"><b>Reconcilation</b></h4>
+                        </li>
+                     </ul>
+               </section>
+               <!-- /.sidebar -->
+            </aside>
+            </div>
+         </div>
+         <!-- Content Wrapper. Contains page content -->
+         <div class="content-wrapper" style="background:none;min-height:350px;">
+         </div>
+         <!-- /.row (main row) -->
+         <!-- /.content -->
+         <!-- /.content-wrapper -->
+         <!-- /.control-sidebar -->
+         <!-- Add the sidebar's background. This div must be placed
+            immediately after the control sidebar -->
       </div>
-      
-      
-    </div>
-    <div class="col-md-2 nopadding-right" >
-       <aside class="main-sidebar main-sidebar-right" style="height:1500px;">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar" style="height:1500px;">
-      <!-- Sidebar user panel -->
-      <div class="user-panel user-panel-right">
-     
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" style="background-color:#e7e7e7;height:1500px">
-        <li class="header"><h4><b>Raise Purchase Order</b></h4></li>
-        <li class="header"><h4><b>Close Order</b></h4></li>
-        <li class="header"><h4><b>Reconcilation</b></h4></li>
-        
-      </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-    </div>
-  </div>
- 
-
-
-
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="background:none;min-height:350px;">
+      <!-- ./wrapper -->
+      <!-- jQuery 2.2.0 -->
+      <!--modal for purchase order -->
+      <!-- Modal -->
+      <div id="purchaseOrderModal" class="modal fade" role="dialog">
+         <div class="modal-dialog-purchaseOrder modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Raise Purchase Order</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <address>
+                           <strong>Twitter, Inc.</strong><br>
+                           1355 Market Street, Suite 900<br>
+                           San Francisco, CA 94103<br>
+                           <abbr title="Phone">P:</abbr> (123) 456-7890
+                           <br>
+                           <b>StaffID:123</b>
+                        </address>
+                     </div>
+                     <div class="col-md-4"></div>
+                     <div class="col-md-4">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <img src="http://dynamic.placementindia.com/recruiter_comp_logo/370679.png" height="50px" width="50px">
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12">
+                              <p>Reconcilation</p>
+                              <p>R.F Number</p>
+                              <p>Date</p>
+                              <p>Time</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <table class="table">
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Description</th>
+        <th>Qty</th>
+        <th>Measurement</th>
+        <th>Expiry</th>
+        <th>Unit Price</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+                    </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
       </div>
-      <!-- /.row (main row) -->
-
-    <!-- /.content -->
-  <!-- /.content-wrapper -->
-  
-
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-</div>
-<!-- ./wrapper -->
-
-<!-- jQuery 2.2.0 -->
-<script src="js/jQuery-2.2.0.min.js"></script>
-<script>
-  $('.selectAll').click(function(){
-    console.log("yay!!");
-    $('.selectItem').prop('checked',true);
-  })
-  $('.unSelectAll').click(function(){
-    console.log("yay!!");
-    $('.selectItem').prop('checked',false);
-  })
-</script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.5 -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-</body>
+      <!--  modal for reconcilation-->
+      <div id="reconcilationModal" class="modal fade" role="dialog">
+         <div class="modal-dialog-reconcilation modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Raise Purchase Order</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <address>
+                           <strong>Twitter, Inc.</strong><br>
+                           1355 Market Street, Suite 900<br>
+                           San Francisco, CA 94103<br>
+                           <abbr title="Phone">P:</abbr> (123) 456-7890
+                           <br>
+                           <b>StaffID:123</b>
+                        </address>
+                     </div>
+                     <div class="col-md-4"></div>
+                     <div class="col-md-4">
+                        <div class="row">
+                           <div class="col-md-12">
+                              <img src="http://dynamic.placementindia.com/recruiter_comp_logo/370679.png" height="50px" width="50px">
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12">
+                              <p>Reconcilation</p>
+                              <p>R.F Number</p>
+                              <p>Date</p>
+                              <p>Time</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="js/jQuery-2.2.0.min.js"></script>
+      <script>
+         $('.selectAll').click(function(){
+           console.log("yay!!");
+           $('.selectItem').prop('checked',true);
+         })
+         $('.unSelectAll').click(function(){
+           console.log("yay!!");
+           $('.selectItem').prop('checked',false);
+         })
+      </script>
+      <!-- jQuery UI 1.11.4 -->
+      <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+      <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+      <script>
+         $.widget.bridge('uibutton', $.ui.button);
+      </script>
+      <!-- Bootstrap 3.3.5 -->
+      <script src="js/bootstrap.min.js"></script>
+      <!-- Morris.js charts -->
+   </body>
 </html>
